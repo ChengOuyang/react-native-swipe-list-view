@@ -307,7 +307,9 @@ class SwipeRow extends Component {
 			} else {
 				this.isOpen = true;
 				this.props.onRowDidOpen && this.props.onRowDidOpen(toValue);
-			}
+            }
+            this._translateX.setValue(toValue)
+            
 			if(onAnimationEnd) {
 				onAnimationEnd();
 			}
