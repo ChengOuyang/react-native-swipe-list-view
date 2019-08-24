@@ -308,7 +308,6 @@ class SwipeRow extends Component {
 				this.isOpen = true;
 				this.props.onRowDidOpen && this.props.onRowDidOpen(toValue);
             }
-            this._translateX.setValue(toValue)
             
 			if(onAnimationEnd) {
 				onAnimationEnd();
@@ -321,7 +320,8 @@ class SwipeRow extends Component {
 			this.props.onRowOpen && this.props.onRowOpen(toValue);
 		}
 
-		// reset everything
+        // reset everything
+        this._translateX._value = toValue
 		this.swipeInitialX = null;
 		this.horizontalSwipeGestureBegan = false;
 	}
